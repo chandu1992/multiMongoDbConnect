@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 @RestController
 @RequestMapping("api/v1/")
 public class MongoDBConnectionController {
@@ -43,5 +47,11 @@ public class MongoDBConnectionController {
         System.out.println(mongoTemplateThird);
         mongoTemplateThird.save(user);
         return "Connected to database: " + mongoTemplateThird.getDb().getName();
+    }
+
+    @GetMapping("/getData")
+    public Set<String> getData(){
+        Set<String> data = mongoTemplateThird.getCollectionNames();
+        return  data;
     }
 }
