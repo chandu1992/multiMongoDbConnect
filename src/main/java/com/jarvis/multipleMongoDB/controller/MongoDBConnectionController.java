@@ -52,6 +52,7 @@ public class MongoDBConnectionController {
     @GetMapping("/getData")
     public Set<String> getData(){
         Set<String> data = mongoTemplateThird.getCollectionNames();
+        System.out.println("chandu");
         return  data;
     }
 }
