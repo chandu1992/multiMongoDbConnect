@@ -46,7 +46,7 @@ public class MongoDBConnectionController {
     public String getMongoTemplateThird(@RequestBody User user){
         System.out.println(mongoTemplateThird);
         mongoTemplateThird.save(user);
-        return "Connected to database: " + mongoTemplateThird.getDb().getName();
+        return "Connected to database: "+ mongoTemplateThird.getDb().getName();
     }
 
     @GetMapping("/getData")
