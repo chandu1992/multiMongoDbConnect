@@ -39,6 +39,7 @@ public class MongoDBConnectionController {
     public String getMongoTemplateSecond(@RequestBody User user){
         System.out.println(mongoTemplateSecond);
         mongoTemplateSecond.save(user);
+        System.out.println("data");
         return "Connected to database: " + mongoTemplateSecond.getDb().getName();
     }
 
